@@ -11,6 +11,15 @@ router.get(
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 
+// @route   GET api/auth/logout
+// @desc    Logout
+// @access  Private
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.session.destroy();
+  res.send("Goodbye");
+});
+
 // @route   GET api/auth/failure
 // @desc    Unsuccessful login
 // @access  Public
