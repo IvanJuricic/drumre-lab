@@ -4,8 +4,8 @@
   "description": "test readme",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server",
-    "start": "node server"
+    "dev": "nodemon app",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
