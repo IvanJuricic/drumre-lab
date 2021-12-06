@@ -19,7 +19,9 @@
   "homepage": "https://github.com/IvanJuricic/drumre-lab#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^4.2.1",
+    "mongoose": "^5.13.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
