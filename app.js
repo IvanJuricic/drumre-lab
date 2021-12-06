@@ -10,12 +10,12 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 // Define routes
-
-//app.use("/users", require("./server/routes/users"));
-//app.use("/auth", require("./server/routes/auth"));
+app.use("api/user", require("./server/routes/user"));
+app.use("api/auth", require("./server/routes/auth"));
 
 const PORT = process.env.PORT || 5000;
 
-//app.get("/", (req, res) => res.send("Server running!\n"));
+// Webapp root page
+app.get("/", (req, res) => res.send("Server running!\n"));
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
