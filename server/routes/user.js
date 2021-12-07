@@ -54,4 +54,19 @@ router.get("/weather", isLoggedIn, async (req, res) => {
   res.send(weatherData);
 });
 
+// @route   GET api/user/articles
+// @desc    Get most popular articles from NY Times
+// @access  Private
+router.get("/articles", isLoggedIn, async (req, res) => {
+  const articles = await axios
+    .get(
+      "https://api.nytimes.com/svc/mostpopular/v2/shared/1.json?api-key=5mAher9erIyuRGJDd1lBZM4afqh1A6ay"
+    )
+    .catch((err) => console.log("Error getting articles ", err));
+
+  console.log("Clanci => ", articles.data.results);
+
+  res.send(articles.data.results);
+});
+
 module.exports = router;
