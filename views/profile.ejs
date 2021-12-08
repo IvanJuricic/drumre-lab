@@ -1,0 +1,47 @@
+<!-- views/profile.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        padding-top: 80px;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header text-center">
+        <h1><span class="fa"></span> Profile Page</h1>
+        <a href="/api/auth/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/api/user/" class="btn btn-default btn-sm">Profile</a>
+        <a href="/api/root/" class="btn btn-default btn-sm">Home</a>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="well">
+            <h3 class="text-primary">
+              <span class="fa fa-facebook"></span> Facebook
+            </h3>
+
+            <p>
+              <strong>Name</strong>: <%= user.name %><br />
+              <strong>Surname</strong>: <%= user.surname %><br />
+              <strong>Email</strong>: <%= user.email %><br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

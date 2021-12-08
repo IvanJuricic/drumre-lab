@@ -20,15 +20,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.set("view engine", "ejs");
+
 // Define routes
 app.use("/api/user", require("./server/routes/user"));
 app.use("/api/auth", require("./server/routes/auth"));
+app.use("/api/root", require("./server/routes/root"));
 
 const PORT = process.env.PORT || 5000;
 
 // Webapp root page
-app.get("/", (req, res) =>
-  res.send('<a href="api/auth/login">Authenticate with Google</a>')
-);
+app.get("/", (req, res) => res.render("index"));
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

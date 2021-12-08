@@ -23,7 +23,9 @@ router.get("/", isLoggedIn, async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.send(user);
+  res.render("profile", {
+    user,
+  });
 });
 
 // @route   GET api/user/weather
