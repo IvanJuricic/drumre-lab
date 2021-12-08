@@ -17,7 +17,7 @@ router.get(
 router.get("/logout", (req, res) => {
   req.logout();
   req.session.destroy();
-  res.send("Goodbye");
+  res.redirect("/");
 });
 
 // @route   GET api/auth/failure
